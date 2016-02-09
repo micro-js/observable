@@ -6,7 +6,7 @@
 [![NPM version][npm-image]][npm-url]
 [![Code style][standard-image]][standard-url]
 
-Minimal observable.
+Minimal observable. DOES NOT ADHERE TO ES7 OBSERVABLE SPEC.
 
 ## Installation
 
@@ -15,9 +15,9 @@ Minimal observable.
 ## Usage
 
 ```js
-var Observable = require('@f/observable')
+var observable = require('@f/observable')
 
-var o = Observable()
+var o = observable()
 o.subscribe(function (next) {
   console.log(next)
 }) // => 1 , 2
@@ -28,7 +28,7 @@ o.next(2)
 
 ## API
 
-### Observable()
+### observable()
 
 **Returns:** observable
 
@@ -38,7 +38,7 @@ o.next(2)
 
 **Returns:** unsubscribe function
 
-## .next(val)
+### .next(val)
 
 - `next` - next value to send to listeners
 
