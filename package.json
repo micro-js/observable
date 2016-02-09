@@ -1,0 +1,19 @@
+{
+  "name": "@f/observable",
+  "description": "Minimal observable.",
+  "repository": "git://github.com/micro-js/observable.git",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "postversion": "git push && git push --tags && npm publish --access=public"
+  },
+  "dependencies": {
+    "@f/foreach": "^1.2.2",
+    "@f/is-function": "^1.1.1",
+    "@f/slice": "^1.1.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
+  }
+}
