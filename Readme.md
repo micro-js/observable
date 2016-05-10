@@ -21,9 +21,8 @@ var o = observable()
 o.subscribe(function (next) {
   console.log(next)
 }) // => 1 , 2
-o.next(1)
-o.next(2)
-
+o(1)
+o(2)
 ```
 
 ## API
@@ -32,15 +31,20 @@ o.next(2)
 
 **Returns:** observable
 
-### .subscribe(listener)
+### obs.subscribe(listener)
 
 - `listener` - add listener with signature `listener(nextVal)`
 
 **Returns:** unsubscribe function
 
-### .next(val)
+### (val) - `obs(val)`
 
-- `next` - next value to send to listeners
+- `val` - next value to send to listeners
+
+### () - `obs()`
+
+**Returns:** Current value of the observable
+
 
 ## License
 
