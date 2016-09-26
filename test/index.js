@@ -3,7 +3,7 @@
  */
 
 var Observable = require('..')
-var test = require('tape')
+var test = require('tap').test
 
 /**
  * Tests
