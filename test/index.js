@@ -57,3 +57,14 @@ test('should allow to unsubscribe while listening', function (t) {
   o.subscribe(record('C'))
   o(1)
 })
+
+test('should throw an exception if something else but a function is added as listener', function (t) {
+  var o = Observable(0)
+  try {
+    o.subscribe('a')
+  } catch (e) {
+    t.end()
+    return
+  }
+  t.fail('Error expected when subscribing with string')
+})
