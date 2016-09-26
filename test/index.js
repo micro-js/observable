@@ -68,3 +68,11 @@ test('should throw an exception if something else but a function is added as lis
   }
   t.fail('Error expected when subscribing with string')
 })
+
+test('repeated unsubscribtion should be okay', function (t) {
+  var o = Observable(0)
+  var unsubscribe = o.subscribe(function () {})
+  unsubscribe()
+  unsubscribe()
+  t.end()
+})
