@@ -5,6 +5,8 @@
 var Observable = require('..')
 var test = require('tap').test
 
+function noop () {}
+
 /**
  * Tests
  */
@@ -71,9 +73,20 @@ test('should throw an exception if something else but a function is added as lis
 
 test('repeated unsubscribtion should be okay', function (t) {
   var o = Observable(0)
-  var unsubscribe = o.subscribe(function () {})
+  var unsubscribe = o.subscribe(noop)
   unsubscribe()
   unsubscribe()
+  t.end()
+})
+
+test('should work after listeners were drained and readded again', function (t) {
+  var o = Observable(0)
+  var unsubscribe = o.subscribe(noop)
+  o(1)
+  unsubscribe()
+  o(2)
+  unsubscribe = o.subscribe(noop)
+  o(3)
   t.end()
 })
 
