@@ -76,3 +76,9 @@ test('repeated unsubscribtion should be okay', function (t) {
   unsubscribe()
   t.end()
 })
+
+test('it should work without subscriber', function (t) {
+  var o = Observable(0)
+  o(1)
+  t.end()
+})
