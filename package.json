@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "test": "tap test/index.js",
+    "test": "standard && tap test/index.js",
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@f/slice": "^1.1.1"
   },
   "devDependencies": {
+    "standard": "^8.2.0",
     "tap": "^7.1.2"
   }
 }
